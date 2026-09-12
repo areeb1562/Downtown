@@ -580,7 +580,8 @@ body.preloading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  gap: 8px;
+  padding: clamp(8px, 2.5vw, 12px) clamp(10px, 3vw, 16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(55, 55, 55, 0.92);
   flex-shrink: 0;
@@ -589,12 +590,14 @@ body.preloading {
 .menu-modal__brand-identity {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .menu-modal__brand-logo {
-  width: 36px;
-  height: 36px;
+  width: clamp(30px, 8vw, 36px);
+  height: clamp(30px, 8vw, 36px);
   border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -608,19 +611,66 @@ body.preloading {
   object-fit: cover;
 }
 
+.menu-modal__titles {
+  min-width: 0;
+}
+
 .menu-modal__titles h2 {
   font-family: var(--font-editorial);
-  font-size: 1.25rem;
+  font-size: clamp(0.95rem, 3.4vw, 1.25rem);
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   line-height: 1.2;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .menu-modal__actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Call Us Direct Dial Button */
+.modal-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #15803d;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  text-decoration: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.35);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.modal-btn-call svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.modal-btn-call:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.45);
+}
+
+.modal-btn-call:active {
+  transform: translateY(0) scale(0.96);
 }
 
 .modal-btn-pdf {
@@ -674,7 +724,7 @@ body.preloading {
   transform: rotate(90deg);
 }
 
-/* Modal Body - Pure Neutral Dark Grey */
+/* Modal Body - Pure Neutral Dark Grey with Pinch Zoom Support */
 .menu-modal__body {
   flex: 0 1 auto;
   position: relative;
@@ -688,6 +738,17 @@ body.preloading {
   padding: 12px;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
+  user-select: none;
+}
+
+.menu-modal__body.is-zoomed {
+  overflow: hidden;
+  touch-action: none;
+  cursor: grab;
+}
+
+.menu-modal__body.is-zoomed:active {
+  cursor: grabbing;
 }
 
 .menu-stage {
@@ -697,6 +758,13 @@ body.preloading {
   gap: 12px;
   width: 100%;
   user-select: none;
+  transform-origin: center center;
+  will-change: transform;
+  transition: none;
+}
+
+.menu-stage.is-animating {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .menu-page-img {
@@ -707,6 +775,7 @@ body.preloading {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
   animation: menuPageFadeIn 0.45s cubic-bezier(0.19, 1, 0.22, 1) both;
 }
 
@@ -743,6 +812,17 @@ body.preloading {
     max-height: calc(100dvh - 20px);
     border-radius: 16px;
   }
+
+  .modal-btn-call,
+  .modal-btn-pdf {
+    padding: 5px 10px;
+    font-size: 0.72rem;
+  }
+
+  .modal-btn-close {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -752,5 +832,18 @@ body.preloading {
 
   .brand-card__media-wrap {
     border-radius: 12px;
+  }
+
+  .modal-btn-call,
+  .modal-btn-pdf {
+    padding: 4px 8px;
+    font-size: 0.68rem;
+    gap: 3px;
+  }
+
+  .modal-btn-call svg,
+  .modal-btn-pdf svg {
+    width: 11px;
+    height: 11px;
   }
 }
