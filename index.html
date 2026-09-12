@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="My Downtown - Our Menu">
+  <meta name="theme-color" content="#faf9f6">
+  <title>MY DOWNTOWN | Our Menu</title>
+
+  <link rel="icon" type="image/png" href="Logo/Favicon.png">
+  <link rel="apple-touch-icon" href="Logo/Favicon.png">
+
+  <!-- Pinterest Aesthetic / Retro Editorial Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Italiana&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================= PRELOADER (Store Shutter Open Mechanism) ================= -->
+  <aside id="preloader" class="preloader" aria-label="Welcome to My Downtown - Tap to open menu" role="button" tabindex="0">
+    <div class="shutter-body">
+      <div class="shutter-slat-row"></div>
+      <div class="shutter-slat-row"></div>
+      <div class="shutter-slat-row"></div>
+      <div class="shutter-slat-row"></div>
+      <div class="shutter-slat-row"></div>
+      <div class="shutter-slat-row"></div>
+
+      <!-- Center Logo -->
+      <div class="preloader__inner" id="preloaderContent">
+        <div class="preloader__logo-wrap">
+          <img src="Logo/Downtown.webp" alt="MY DOWNTOWN" class="preloader__logo-img" fetchpriority="high">
+        </div>
+      </div>
+
+      <!-- Minimal Bottom-Center Tap to Open Prompt -->
+      <div class="preloader__bottom-cta" id="preloaderCtaWrap">
+        <button type="button" class="preloader__minimal-cta" id="preloaderCtaBtn" aria-label="Open Menu">
+          <span class="minimal-cta__icon-track" aria-hidden="true">
+            <svg class="minimal-cta__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </span>
+          <span class="minimal-cta__text">TAP TO OPEN MENU</span>
+        </button>
+      </div>
+
+      <div class="shutter-bottom-bar">
+        <span class="shutter-handle"></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= BACKGROUND AESTHETIC LINES ================= -->
+  <div class="bg-fine-lines" aria-hidden="true">
+    <div class="bg-line-col col-1"></div>
+    <div class="bg-line-col col-2"></div>
+    <div class="bg-line-col col-3"></div>
+  </div>
+
+  <!-- ================= MAIN APP WRAPPER ================= -->
+  <div id="app" class="app-wrapper">
+
+    <!-- Header Section: Generous Top Space + Small Centered Logo + Space + Underlined "OUR MENU" -->
+    <header class="site-header">
+      <div class="container header-content">
+
+        <!-- Small Centered Downtown Logo -->
+        <div class="header-logo-wrap">
+          <img src="Logo/Downtown.webp" alt="MY DOWNTOWN" class="header-logo-img">
+        </div>
+
+        <!-- Thinner, Less-Width Aesthetic Retro "OUR MENU" with Underline -->
+        <div class="section-title-wrap">
+          <h1 class="section-title">OUR MENU</h1>
+          <span class="section-title-line" aria-hidden="true"></span>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main Content: 2 Cards in a Row Grid (Image Only, 5:4 Ratio) -->
+    <main class="main-content">
+      <div class="container">
+
+        <section class="cards-grid" id="brandsGrid" aria-label="Downtown Food Outlets">
+
+          <!-- Card 1: Teapetti -->
+          <article class="brand-card" data-brand="Teapetti" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Teapetti Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Teapetti.webp" alt="Teapetti" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 2: Dosa Talkies -->
+          <article class="brand-card" data-brand="Dosa Talkies" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Dosa Talkies Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Dosa_Talkies.webp" alt="Dosa Talkies" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 3: Cygrill -->
+          <article class="brand-card" data-brand="Cygrill" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Cygrill Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Cygrill.webp" alt="Cygrill" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 4: Artik -->
+          <article class="brand-card" data-brand="Artik" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Artik Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Artik.webp" alt="Artik" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 5: B Alaban -->
+          <article class="brand-card" data-brand="B Alaban" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open B Alaban Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/B Alaban.webp" alt="B Alaban" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 6: Holy Crepe -->
+          <article class="brand-card" data-brand="Holy Crepe" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Holy Crepe Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Hole Crepe.webp" alt="Holy Crepe" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+          <!-- Card 7: Grid -->
+          <article class="brand-card" data-brand="Grid" tabindex="0" role="button" aria-haspopup="dialog"
+            aria-label="Open Grid Menu">
+            <div class="brand-card__media-wrap">
+              <img src="Logo/Grid.webp" alt="Grid" class="brand-card__img" loading="eager">
+            </div>
+          </article>
+
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ================= INTERACTIVE MENU MODAL VIEWER ================= -->
+  <div id="menuModal" class="menu-modal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modalBrandTitle">
+    <div class="menu-modal__backdrop" id="modalBackdrop"></div>
+
+    <div class="menu-modal__container">
+
+      <!-- Modal Top Bar -->
+      <header class="menu-modal__header">
+        <div class="menu-modal__brand-identity">
+          <div class="menu-modal__brand-logo" id="modalBrandLogo">
+            <img src="Logo/Cygrill.webp" alt="Selected Brand Logo" id="modalHeaderImg">
+          </div>
+          <div class="menu-modal__titles">
+            <h2 id="modalBrandTitle">Cygrill Menu</h2>
+          </div>
+        </div>
+
+        <div class="menu-modal__actions">
+          <!-- Direct PDF Download/Open Button -->
+          <a href="Menu/Cygrill.pdf" target="_blank" rel="noopener noreferrer" class="modal-btn-pdf" id="pdfLinkBtn"
+            title="Open Original PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span>PDF</span>
+          </a>
+
+          <!-- Close Modal Button -->
+          <button class="modal-btn-close" id="modalCloseBtn" aria-label="Close Menu Viewer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Menu Image Display Container -->
+      <div class="menu-modal__body" id="menuViewerContainer">
+        <div class="menu-stage" id="menuStage">
+          <img src="Menu/Cygrill_page_1.webp" alt="Menu Page" class="menu-page-img" id="menuPageImg" draggable="false">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
