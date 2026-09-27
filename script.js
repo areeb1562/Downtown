@@ -360,9 +360,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Desktop / Trackpad Mouse Wheel Focal Point Zoom
+    // Desktop / Trackpad Mouse Wheel Focal Point Zoom (Ctrl + Wheel)
     menuViewerContainer.addEventListener('wheel', (e) => {
-      if (e.ctrlKey || Math.abs(e.deltaY) > 0) {
+      if (e.ctrlKey) {
         e.preventDefault();
         const center = getContainerCenter(menuViewerContainer);
         const focalX = e.clientX - center.centerX;
